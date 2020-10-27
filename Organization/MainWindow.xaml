@@ -6,7 +6,18 @@
         xmlns:local="clr-namespace:Organization"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <StackPanel>
+        <TabControl VerticalAlignment="Top">
+            <TabItem Header="Сотрудники">
+                <DataGrid ItemsSource="{Binding Workers}" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name}"/>
+                        <DataGridTextColumn Header="Surname" Width="*" Binding="{Binding Surname}"/>
+                        <DataGridTextColumn Header="Age" Width="40" Binding="{Binding Age}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Департаменты"/>
+        </TabControl>
+    </StackPanel>
 </Window>
