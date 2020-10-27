@@ -17,7 +17,14 @@
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>
-            <TabItem Header="Департаменты"/>
+            <TabItem Header="Департаменты">
+                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Departments}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name" Width="150" Binding="{Binding Dep}"/>
+                        <DataGridTextColumn Header="Description" Width="*" Binding="{Binding Desc}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
         </TabControl>
     </StackPanel>
 </Window>

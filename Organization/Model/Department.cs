@@ -6,15 +6,15 @@ namespace Organization.Model
 {
     class Department
     {
-        //private ObservableCollection<Worker> _Workers;
-        //
-        //private string _dep;
-        //public string Dep { get; set; }
-        //
-        //public Department(Worker worker) 
-        //{
-        //    _Workers.Add(worker);
-        //}
+        private string _dep;
+        private string _desc;
+        public string Dep { get => _dep; set { } }
+        public string Desc { get => _desc; set { } }
 
+        public Department(string name, string desc) 
+        {
+            _dep = name;
+            _desc = desc;
+        }
     }
 }

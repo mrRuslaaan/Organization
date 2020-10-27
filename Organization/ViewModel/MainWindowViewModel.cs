@@ -12,13 +12,13 @@ namespace Organization.ViewModel
         private Worker _selectedWorker;
 
         public ObservableCollection<Worker> Workers { get; set; }
+        public ObservableCollection<Department> Departments { get; set; }
         public Worker SelectedWorker
         {
             get { return _selectedWorker; }
             set
             {
                 _selectedWorker = value;
-                //OnPropertyChanged("SelectedPhone");
             }
         }
 
@@ -26,16 +26,16 @@ namespace Organization.ViewModel
         {
             Workers = new ObservableCollection<Worker>
             {
-               // new Worker {Name="1", Surname="1-1", Age=123 },
-               // new Worker {Name="2", Surname="2-2", Age=123 },
-               // new Worker {Name="3", Surname="3-3", Age=123 },
-               // new Worker {Name="4", Surname="4-4", Age=123 }
-
                 new Worker("1","1-1",21),
                 new Worker("2","2-2",22),
                 new Worker("3","3-3",23),
                 new Worker("4","4-4",24),
-            };                                       
+            };
+            Departments = new ObservableCollection<Department>
+            {
+                new Department("Админ","бабаб"),
+                new Department("Эконом", "фывфыв"),
+            };
         }
     }
 }
