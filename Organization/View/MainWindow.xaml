@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Organization"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Главное окно" Height="450" Width="800">
     <StackPanel>
         <TabControl VerticalAlignment="Top">
             <TabItem Header="Сотрудники">
@@ -14,14 +14,18 @@
                         <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name}"/>
                         <DataGridTextColumn Header="Surname" Width="*" Binding="{Binding Surname}"/>
                         <DataGridTextColumn Header="Age" Width="40" Binding="{Binding Age}" />
+                        <DataGridTextColumn Header="Department" Width="*" Binding="{Binding IdDep}"/>                        
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>
             <TabItem Header="Департаменты">
                 <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Departments}">
                     <DataGrid.Columns>
+                        <DataGridTextColumn Header="id" Width="30" Binding="{Binding IdDep}"/>
                         <DataGridTextColumn Header="Name" Width="150" Binding="{Binding Dep}"/>
                         <DataGridTextColumn Header="Description" Width="*" Binding="{Binding Desc}"/>
+                        <DataGridComboBoxColumn Header="Workers" ItemsSource="{Binding Workers}" SelectedValueBinding="{Binding Workers}" />
+                        
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>
