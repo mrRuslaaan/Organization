@@ -9,12 +9,12 @@
     <StackPanel>
         <TabControl VerticalAlignment="Top">
             <TabItem Header="Сотрудники">
-                <DataGrid ItemsSource="{Binding Workers}" AutoGenerateColumns="False">
+                <DataGrid ItemsSource="{Binding Path=Workers}" AutoGenerateColumns="False">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name}"/>
                         <DataGridTextColumn Header="Surname" Width="*" Binding="{Binding Surname}"/>
                         <DataGridTextColumn Header="Age" Width="40" Binding="{Binding Age}" />
-                        <DataGridTextColumn Header="Department" Width="*" Binding="{Binding IdDep}"/>                        
+                        <DataGridTextColumn x:Name="DepTextCol" Header="Department" Width="*" Binding="{Binding Department}"/>                        
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>
@@ -24,8 +24,6 @@
                         <DataGridTextColumn Header="id" Width="30" Binding="{Binding IdDep}"/>
                         <DataGridTextColumn Header="Name" Width="150" Binding="{Binding Dep}"/>
                         <DataGridTextColumn Header="Description" Width="*" Binding="{Binding Desc}"/>
-                        <DataGridComboBoxColumn Header="Workers" ItemsSource="{Binding Workers}" SelectedValueBinding="{Binding Workers}" />
-                        
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>
